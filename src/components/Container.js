@@ -1,12 +1,11 @@
-import ReactDOM from 'react-dom'
+
 import * as THREE from 'three'
-import React, { Suspense, useEffect, useRef, useState } from 'react'
-import { Canvas, useLoader, useFrame ,useThree} from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import React, { Suspense, useEffect, useRef} from 'react'
+import { Canvas, useFrame ,useThree} from '@react-three/fiber'
+
 import { useGLTF } from '@react-three/drei'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import useMouse from '@react-hook/mouse-position'
-import { PerspectiveCamera } from 'three'
+
 
 const CameraController = () => {
   const { camera, gl } = useThree();
@@ -27,7 +26,7 @@ const CameraController = () => {
 //Tour (ie 1 to 2)(Load glb file and play animation)
 function Tour1(){
   const gltf=useGLTF("assets/Bondi.glb");
-  const { camera, gl } = useThree();
+  const { camera} = useThree();
   let mixer;
   let dummy=new THREE.Object3D();
 useEffect(()=>{
