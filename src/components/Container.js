@@ -56,6 +56,7 @@ function Container() {
   //   enterDelay: 100,
   //   leaveDelay: 100,
   // })
+  return(
     <div ref={ref}>
     <Canvas 
     onCreated={({ gl }) => {
