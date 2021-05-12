@@ -27,13 +27,13 @@ const CameraController = () => {
 function Tour1(){
   const gltf=useGLTF("assets/Bondi.glb");
   const { camera} = useThree();
-  let mixer;
+  let mixer = new THREE.AnimationMixer(gltf.scene);
   let dummy=new THREE.Object3D();
 useEffect(()=>{
   dummy.setposition=[0,0,100]
   camera.updateMatrix(dummy.matrix)
   if (gltf.animations.length) {
-      mixer = new THREE.AnimationMixer(gltf.scene);
+
       gltf.animations.forEach(clip => {
           const action = mixer.clipAction(clip)
           console.log(action)
