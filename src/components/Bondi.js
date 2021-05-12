@@ -10,7 +10,8 @@ export default function Model(props) {
   const { nodes, materials, animations } = useGLTF('assets/Bondi.glb')
   const { actions } = useAnimations(animations, group)
     useEffect(()=>{
-
+       console.log(actions)
+       actions.CameraAction.play()
     })
   return (
     <group ref={group} {...props} dispose={null}>
